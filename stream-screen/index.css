@@ -1,0 +1,66 @@
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+html {
+  background: white;
+}
+
+body {
+  position: relative;
+  width: 2560px;
+  height: 1440px;
+  background: #101217;
+}
+
+#screen {
+  position: absolute;
+  left: 40px;
+  top: 40px;
+  width: 1920px;
+  height: 1080px;
+  background: #0f0;
+  border-radius: 20px;
+  filter: drop-shadow(0 0 8px rgba(136, 136, 255, 0.5333333333));
+}
+
+#description {
+  position: absolute;
+  left: 40px;
+  bottom: 40px;
+  width: 1920px;
+  height: 240px;
+  padding: 20px;
+  color: white;
+  background: #101217;
+  border-radius: 20px;
+  filter: drop-shadow(0 0 8px rgba(136, 136, 255, 0.5333333333));
+  font-size: 48px;
+}
+
+#comments {
+  position: absolute;
+  right: 40px;
+  top: 40px;
+  width: 520px;
+  height: 1080px;
+  background: #101217;
+  border-radius: 20px;
+  filter: drop-shadow(0 0 8px rgba(136, 136, 255, 0.5333333333));
+}/*# sourceMappingURL=index.css.map */
