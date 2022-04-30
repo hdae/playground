@@ -12,9 +12,31 @@
 </head>
 
 <body>
-    <div id="screen"></div>
-    <div id="description" contenteditable="true"></div>
-    <div id="comments"></div>
+    <main>
+        <div id="screen"></div>
+        <div id="description" contenteditable="true"></div>
+        <div id="comments"></div>
+        <div id="clock"></div>
+    </main>
+
+    <script>
+        const update_clock = () => {
+            const now = new Date();
+            const hours = `${now.getHours()}`.padStart(2, '0');
+            const minutes = `${now.getMinutes()}`.padStart(2, '0');
+            const clock_element = document.getElementById("clock");
+            clock_element.innerText = `${hours}:${minutes}`;
+        };
+
+        const update = () => {
+            update_clock();
+        };
+
+        document.addEventListener("DOMContentLoaded", () => {
+            update();
+            setInterval(update, 1000);
+        });
+    </script>
 </body>
 
 </html>

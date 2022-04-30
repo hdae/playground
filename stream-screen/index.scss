@@ -30,7 +30,15 @@ body {
     position: relative;
     width: 2560px;
     height: 1440px;
-    background: #101217;
+    background: url(./background.png);
+}
+
+main {
+    width: 100%;
+    height: 100%;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-size: 48px;
+    color: white;
 }
 
 #screen {
@@ -39,9 +47,9 @@ body {
     top: 40px;
     width: 1920px;
     height: 1080px;
-    background: #0f0;
+    background: magenta;
+    border: 8px solid #6a6;
     border-radius: 20px;
-    filter: drop-shadow(0 0 8px #88F8);
 }
 
 #description {
@@ -51,11 +59,11 @@ body {
     width: 1920px;
     height: 240px;
     padding: 20px;
-    color: white;
-    background: #101217;
+    // background: #101217;
+    color: black;
+    background: #FFFC;
+    border: 8px solid #6a6;
     border-radius: 20px;
-    filter: drop-shadow(0 0 8px #88F8);
-    font-size: 48px;
 }
 
 #comments {
@@ -64,7 +72,27 @@ body {
     top: 40px;
     width: 520px;
     height: 1080px;
-    background: #101217;
+    // background: #101217;
+    color: black;
+    background: #FFFC;
+    border: 8px solid #6a6;
     border-radius: 20px;
-    filter: drop-shadow(0 0 8px #88F8);
+}
+
+#clock {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 40px;
+    bottom: 40px;
+    width: 520px;
+    height: 240px;
+    padding: 20px;
+    // background: #101217;
+    color: black;
+    background: #FFFC;
+    border: 8px solid #6a6;
+    border-radius: 20px;
+    font-size: 120px;
 }
