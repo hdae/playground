@@ -1,3 +1,11 @@
+// Theme
+
+:root {
+    --key: magenta;
+    --primary: rgb(255, 185, 32);
+    --secondary: rgb(255, 232, 181);
+}
+
 // Reset
 
 *,
@@ -23,14 +31,18 @@ img {
 // Main
 
 html {
-    background: white;
+    background: black;
 }
 
 body {
     position: relative;
     width: 2560px;
     height: 1440px;
-    background: url(./background.png);
+    background: url(./background.png) var(--secondary);
+    background-blend-mode: lighten;
+    // background: var(--secondary);
+    // mask-image: url(./background.png);
+    // mask-mode: alpha;
 }
 
 main {
@@ -47,8 +59,8 @@ main {
     top: 40px;
     width: 1920px;
     height: 1080px;
-    background: magenta;
-    border: 8px solid #6a6;
+    background: var(--key);
+    border: 8px solid var(--primary);
     border-radius: 20px;
 }
 
@@ -62,7 +74,7 @@ main {
     // background: #101217;
     color: black;
     background: #FFFC;
-    border: 8px solid #6a6;
+    border: 8px solid var(--primary);
     border-radius: 20px;
 }
 
@@ -75,7 +87,7 @@ main {
     // background: #101217;
     color: black;
     background: #FFFC;
-    border: 8px solid #6a6;
+    border: 8px solid var(--primary);
     border-radius: 20px;
 }
 
@@ -92,7 +104,7 @@ main {
     // background: #101217;
     color: black;
     background: #FFFC;
-    border: 8px solid #6a6;
+    border: 8px solid var(--primary);
     border-radius: 20px;
     font-size: 120px;
 }
