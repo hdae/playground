@@ -14,7 +14,7 @@
 <body>
     <main>
         <div id="screen"></div>
-        <div id="description" contenteditable="true"></div>
+        <div id="description"></div>
         <div id="comments"></div>
         <div id="clock"></div>
     </main>
@@ -24,18 +24,37 @@
             const now = new Date();
             const hours = `${now.getHours()}`.padStart(2, '0');
             const minutes = `${now.getMinutes()}`.padStart(2, '0');
-            const clock_element = document.getElementById("clock");
-            clock_element.innerText = `${hours}:${minutes}`;
+            const clock = document.getElementById("clock");
+            clock.innerText = `${hours}:${minutes}`;
         };
 
-        const update = () => {
+        const init_clock = () => {
             update_clock();
+            setInterval(update_clock, 1000);
         };
 
-        document.addEventListener("DOMContentLoaded", () => {
-            update();
-            setInterval(update, 1000);
-        });
+        const update_description = () => {
+            const description = document.getElementById("description");
+            const result = prompt("Change description", localStorage.getItem("description") ?? "");
+            if (result !== null) {
+                const tmp = result.replace("\\n", "\n")
+                description.innerText = tmp;
+                localStorage.setItem("description", tmp);
+            }
+        };
+
+        const init_description = () => {
+            const description = document.getElementById("description");
+            description.addEventListener("click", update_description);
+            description.innerText = localStorage.getItem("description") ?? "";
+        };
+
+        const main = () => {
+            init_clock();
+            init_description();
+        };
+
+        document.addEventListener("DOMContentLoaded", main);
     </script>
 </body>
 
