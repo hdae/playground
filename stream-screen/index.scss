@@ -1,9 +1,9 @@
 // Theme
 
 :root {
-    --key: magenta;
-    --primary: rgb(255, 185, 32);
-    --secondary: rgb(255, 232, 181);
+    --key: #F0F;
+    --primary: #FB1;
+    --secondary: #FEB;
 }
 
 // Reset
@@ -31,80 +31,82 @@ img {
 // Main
 
 html {
-    background: black;
+    background: #000;
 }
 
 body {
     position: relative;
     width: 2560px;
     height: 1440px;
-    background: url(./background.png) var(--secondary);
+    background: var(--secondary) url(./background.png);
     background-blend-mode: lighten;
-    // background: var(--secondary);
-    // mask-image: url(./background.png);
-    // mask-mode: alpha;
 }
 
 main {
+    // Size
     width: 100%;
     height: 100%;
+    // Color
+    color: #FFF;
+    // Font
     font-family: 'M PLUS Rounded 1c', sans-serif;
     font-size: 48px;
-    color: white;
+}
+
+main > div {
+    // Position
+    position: absolute;
+    // Color
+    color: #000;
+    background: #FFFA;
+    // Border
+    border: 8px solid var(--primary);
+    border-radius: 20px;
 }
 
 #screen {
-    position: absolute;
+    // Position
     left: 40px;
     top: 40px;
+    // Size
     width: 1920px;
     height: 1080px;
+    // Color
     background: var(--key);
-    border: 8px solid var(--primary);
-    border-radius: 20px;
 }
 
 #description {
-    position: absolute;
+    // Position
     left: 40px;
     bottom: 40px;
+    // Size
     width: 1920px;
     height: 240px;
+    // Space
     padding: 20px;
-    // background: #101217;
-    color: black;
-    background: #FFFC;
-    border: 8px solid var(--primary);
-    border-radius: 20px;
 }
 
 #comments {
-    position: absolute;
+    // Position
     right: 40px;
     top: 40px;
+    // Size
     width: 520px;
     height: 1080px;
-    // background: #101217;
-    color: black;
-    background: #FFFC;
-    border: 8px solid var(--primary);
-    border-radius: 20px;
 }
 
 #clock {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
+    // Position
     right: 40px;
     bottom: 40px;
     width: 520px;
     height: 240px;
+    // Space
     padding: 20px;
-    // background: #101217;
-    color: black;
-    background: #FFFC;
-    border: 8px solid var(--primary);
-    border-radius: 20px;
+    // Place
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // Font
     font-size: 120px;
 }
