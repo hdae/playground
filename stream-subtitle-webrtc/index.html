@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <main>
+        <div id="text"></div>
+    </main>
+
+    <script>
+        const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+        const main = () => {
+            const text = document.getElementById("text");
+            const channel = new BroadcastChannel("eb40afe5-62e7-4999-8bbc-d062878f4097");
+            if (navigator.userAgent.includes("OBS") || location.search.includes("OBS")) {
+                channel.addEventListener("message", (event) => text.innerText = event.data);
+            } else {
+                const recognition = new SpeechRecognition();
+                recognition.continuous = false;
+                recognition.interimResults = true;
+                recognition.maxAlternatives = 1;
+                recognition.onresult = (event) => {
+                    const result = event.results[event.results.length - 1];
+                    text.innerText = result[0].transcript;
+                    channel.postMessage(result[0].transcript);
+                };
+                recognition.onend = recognition.start;
+                recognition.start();
+            }
+        };
+
+        document.addEventListener("DOMContentLoaded", main);
+    </script>
+</body>
+
+</html>
